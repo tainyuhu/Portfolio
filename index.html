@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>胡恬瑜的個人履歷</title>
+    <title>個人履歷</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #121212;
+            background-color: #1c1c1c;
             color: #ffffff;
             margin: 0;
             padding: 0;
@@ -18,14 +18,24 @@
             padding: 20px;
         }
         header {
-            background: #1e1e1e;
+            background: #333;
             padding: 20px;
             text-align: center;
-            border-bottom: 2px solid #3e3e3e;
+            border-bottom: 3px solid #4CAF50;
         }
         header h1 {
             margin: 0;
             font-size: 2.5em;
+        }
+        .profile {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #4CAF50;
         }
         .dashboard {
             display: flex;
@@ -34,11 +44,11 @@
             margin-top: 20px;
         }
         .card {
-            background: #1e1e1e;
+            background: #333;
             padding: 20px;
             margin: 10px;
-            flex: 1 1 calc(50% - 40px);
-            border: 2px solid #3e3e3e;
+            flex: 1 1 calc(48% - 20px);
+            border: 2px solid #4CAF50;
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
         .card h2 {
@@ -49,6 +59,13 @@
         .card p {
             margin: 10px 0;
         }
+        footer {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+            border-top: 3px solid #4CAF50;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -56,6 +73,9 @@
         <header>
             <h1>胡恬瑜的個人履歷</h1>
         </header>
+        <div class="profile">
+            <img src="https://via.placeholder.com/150" alt="個人照片">
+        </div>
         <section class="dashboard">
             <div class="card">
                 <h2>個人資料</h2>
@@ -87,7 +107,9 @@
                 <p><strong>辦公室應用:</strong> Excel、PowerPoint、Project、Word</p>
             </div>
         </section>
+        <footer>
+            <p>&copy; 2024 胡恬瑜的個人履歷</p>
+        </footer>
     </div>
 </body>
 </html>
-
