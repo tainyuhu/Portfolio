@@ -1,12 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>胡恬瑜的個人履歷</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #3e3e3e;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .card {
+            background: #1e1e1e;
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 calc(50% - 40px);
+            border: 2px solid #3e3e3e;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.5em;
+            color: #4CAF50;
+        }
+        .card p {
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Portfolio</h1>
-    <p>This is my personal website hosted on GitHub Pages.</p>
+    <div class="container">
+        <header>
+            <h1>胡恬瑜的個人履歷</h1>
+        </header>
+        <section class="dashboard">
+            <div class="card">
+                <h2>個人資料</h2>
+                <p>姓名: 胡恬瑜</p>
+                <p>性別: 女</p>
+                <p>年齡: 27歲</p>
+                <p>總年資: 2~3年工作經驗</p>
+            </div>
+            <div class="card">
+                <h2>工作經歷</h2>
+                <p><strong>研發副工程師</strong> - 科勝科技股份有限公司</p>
+                <p>工作年限: 0.5年</p>
+                <p><strong>研發工程師</strong> - 金屬工業研究發展中心</p>
+                <p>工作年限: 1年</p>
+            </div>
+            <div class="card">
+                <h2>學歷</h2>
+                <p><strong>高雄科技大學</strong></p>
+                <p>資訊管理學系碩士夜間就讀中 (2023/9~2025/6)</p>
+                <p><strong>國立高雄科技大學</strong></p>
+                <p>資訊管理系四技畢業 (2015/6~2019/6)</p>
+            </div>
+            <div class="card">
+                <h2>電腦程式能力</h2>
+                <p><strong>程式設計:</strong> Java、Python、C#、MySQL</p>
+                <p><strong>工業軟體應用:</strong> AVEVA InTouch、AVEVA Historian</p>
+                <p><strong>程式語言與開發框架:</strong> C#、ASP.NET、VUE、DJANGO</p>
+                <p><strong>影像處理:</strong> Canva、Adobe Illustrator、Adobe Photoshop</p>
+                <p><strong>辦公室應用:</strong> Excel、PowerPoint、Project、Word</p>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
+
