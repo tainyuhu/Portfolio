@@ -45,6 +45,7 @@ section {
     color: #003366;
     border-bottom: 1px solid #003366;
     padding-bottom: 0.5em;
+    font-weight: bold;
 }
 
 .skills-container {
@@ -78,6 +79,7 @@ section {
 
 .content {
     flex: 1;
+    font-weight: bold;
 }
 
 h2 {
@@ -142,6 +144,10 @@ footer {
     width: 45%;
 }
 
+.project h2 {
+    font-weight: bold;
+}
+
 canvas {
     max-width: 100%;
     height: auto;
@@ -161,7 +167,7 @@ canvas {
     padding: 0.5em 1em;
     margin-top: 1em;
     color: #ffffff;
-    background-color: #ff6600;
+    background-color: #007bff;
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -172,7 +178,7 @@ canvas {
 }
 
 .button:hover {
-    background-color: #ff3300;
+    background-color: #0056b3;
 }
 
 body {
