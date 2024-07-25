@@ -47,6 +47,26 @@ section {
     padding-bottom: 0.5em;
 }
 
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skills-list {
+    flex: 1;
+}
+
+.skills-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-chart {
+    flex: 1;
+    max-width: 50%;
+}
+
 .content {
     margin-top: 1em;
 }
@@ -54,6 +74,36 @@ section {
 h2 {
     color: #003366;
     margin-bottom: 0.5em;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+.timeline-item {
+    background-color: #003366;
+    color: #ffffff;
+    padding: 1em;
+    border-radius: 5px;
+    width: 45%;
+    text-align: center;
+    position: relative;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: #003366 transparent transparent transparent;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 footer {
@@ -65,6 +115,15 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+.project {
+    background-color: #003366;
+    color: #ffffff;
+    padding: 1em;
+    border-radius: 10px;
+    margin-bottom: 2em;
+    text-align: center;
 }
 
 canvas {
