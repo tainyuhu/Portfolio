@@ -1,26 +1,40 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #0a0a0a;
-    color: #00ff00;
+    background-color: #f0f8ff;
+    color: #003366;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    background-image: url('background-pattern.png');
+    background-size: cover;
 }
 
 header {
-    background-color: #1a1a1a;
-    color: #00ff00;
+    background-color: #003366;
+    color: #ffffff;
     text-align: center;
     padding: 2em 0;
-    border-bottom: 2px solid #00ff00;
+    border-bottom: 2px solid #ffffff;
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 section {
     margin: 2em;
     padding: 2em;
-    background-color: #1a1a1a;
-    border: 1px solid #00ff00;
+    background-color: #ffffff;
+    border: 1px solid #003366;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 51, 102, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .section-title {
@@ -28,8 +42,8 @@ section {
     margin-bottom: 1em;
     text-align: center;
     text-transform: uppercase;
-    color: #00ff00;
-    border-bottom: 1px solid #00ff00;
+    color: #003366;
+    border-bottom: 1px solid #003366;
     padding-bottom: 0.5em;
 }
 
@@ -38,17 +52,58 @@ section {
 }
 
 h2 {
-    color: #00ff00;
+    color: #003366;
     margin-bottom: 0.5em;
 }
 
 footer {
-    background-color: #1a1a1a;
-    color: #00ff00;
+    background-color: #003366;
+    color: #ffffff;
     text-align: center;
     padding: 1em 0;
-    border-top: 2px solid #00ff00;
+    border-top: 2px solid #ffffff;
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    color: #ffffff;
+    background-color: #003366;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #00509e;
+}
+
+body {
+    background: linear-gradient(135deg, #e6f7ff 25%, transparent 25%) -50px 0,
+                linear-gradient(225deg, #e6f7ff 25%, transparent 25%) -50px 0,
+                linear-gradient(315deg, #e6f7ff 25%, transparent 25%),
+                linear-gradient(45deg, #e6f7ff 25%, transparent 25%);
+    background-size: 100px 100px;
+    background-color: #ffffff;
 }
