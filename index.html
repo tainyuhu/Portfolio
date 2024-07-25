@@ -87,8 +87,12 @@
         <div class="section-title">教育背景</div>
         <div class="experience-container">
             <div class="content">
-                <p>碩士學位：資訊工程，國立台灣大學，2018年</p>
-                <p>學士學位：資訊管理，國立政治大學，2016年</p>
+                <h2>碩士學位</h2>
+                <p>資訊工程，國立台灣大學</p>
+                <p>2016年 - 2018年</p>
+                <h2>學士學位</h2>
+                <p>資訊管理，國立政治大學</p>
+                <p>2012年 - 2016年</p>
             </div>
             <div class="timeline">
                 <div class="timeline-item">
@@ -109,21 +113,20 @@
     <section>
         <div class="section-title">項目經驗</div>
         <div class="projects-container">
-            <div class="project" style="background-color: #ff8a65;">
+            <div class="project" style="background-color: #424242;">
                 <h2>智能家居系統</h2>
                 <p>描述：開發一個智能家居管理系統，使用React和Node.js進行前後端開發。</p>
                 <p>角色：全端工程師</p>
                 <a class="button" href="https://github.com/username/smart-home" target="_blank">瀏覽項目</a>
                 <a class="button" href="https://github.com/username/smart-home/docs" target="_blank">瀏覽文件</a>
             </div>
-            <div class="project" style="background-color: #4db6ac;">
+            <div class="project" style="background-color: #263238;">
                 <h2>電子商務平台</h2>
                 <p>描述：參與電子商務平台的開發，負責後端API設計和資料庫管理。</p>
                 <p>角色：後端工程師</p>
                 <a class="button" href="https://github.com/username/e-commerce" target="_blank">瀏覽項目</a>
                 <a class="button" href="https://github.com/username/e-commerce/docs" target="_blank">瀏覽文件</a>
             </div>
-            <!-- 添加更多項目 -->
         </div>
     </section>
     <footer>
@@ -132,12 +135,13 @@
 
     <script>
         function createSkillChart(ctx, value) {
+            let color = value > 90 ? '#4CAF50' : value > 60 ? '#FF9800' : '#E0E0E0';
             return new Chart(ctx, {
                 type: 'doughnut',
                 data: {
                     datasets: [{
                         data: [value, 100 - value],
-                        backgroundColor: ['#36A2EB', '#E0E0E0'],
+                        backgroundColor: [color, '#E0E0E0'],
                         borderWidth: 1
                     }]
                 },
@@ -145,7 +149,21 @@
                     cutout: '80%',
                     plugins: {
                         tooltip: { enabled: false },
-                        legend: { display: false }
+                        legend: { display: false },
+                        beforeDraw: function(chart) {
+                            var width = chart.width,
+                                height = chart.height,
+                                ctx = chart.ctx;
+                            ctx.restore();
+                            var fontSize = (height / 114).toFixed(2);
+                            ctx.font = fontSize + "em sans-serif";
+                            ctx.textBaseline = "middle";
+                            var text = value + "%",
+                                textX = Math.round((width - ctx.measureText(text).width) / 2),
+                                textY = height / 2;
+                            ctx.fillText(text, textX, textY);
+                            ctx.save();
+                        }
                     }
                 }
             });
