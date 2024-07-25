@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>李大明的履歷</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
 </head>
 <body>
     <header>
@@ -15,11 +16,7 @@
     <section>
         <div class="section-title">專業技能</div>
         <div class="content">
-            <ul>
-                <li>程式語言：JavaScript, Python, Java</li>
-                <li>網頁技術：HTML, CSS, React</li>
-                <li>開發工具：Git, Docker, Jenkins</li>
-            </ul>
+            <canvas id="skillsChart"></canvas>
         </div>
     </section>
     <section>
@@ -51,10 +48,52 @@
             <h2>電子商務平台</h2>
             <p>描述：參與電子商務平台的開發，負責後端API設計和資料庫管理。</p>
             <p>角色：後端工程師</p>
+            <a class="button" href="https://github.com/username/portfolio" target="_blank">查看作品集</a>
         </div>
     </section>
     <footer>
         <p>&copy; 2024 李大明的履歷</p>
     </footer>
+
+    <script>
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+        const skillsChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['JavaScript', 'Python', 'Java', 'HTML', 'CSS', 'React'],
+                datasets: [{
+                    data: [20, 20, 20, 15, 15, 10],
+                    backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += context.parsed + '%';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                }
+            }
+        });
+    </script>
 </body>
 </html>
