@@ -20,36 +20,37 @@
                 <div class="skill-chart">
                     <canvas id="jsChart"></canvas>
                 </div>
-                <div class="skill-name">JavaScript 85%</div>
+                <div class="skill-name">JavaScript</div>
             </div>
             <div class="skill">
                 <div class="skill-chart">
                     <canvas id="pythonChart"></canvas>
                 </div>
-                <div class="skill-name">Python 90%</div>
+                <div class="skill-name">Python</div>
             </div>
             <div class="skill">
                 <div class="skill-chart">
                     <canvas id="javaChart"></canvas>
                 </div>
-                <div class="skill-name">Java 75%</            </div>
+                <div class="skill-name">Java</div>
+            </div>
             <div class="skill">
                 <div class="skill-chart">
                     <canvas id="htmlChart"></canvas>
                 </div>
-                <div class="skill-name">HTML 90%</div>
+                <div class="skill-name">HTML</div>
             </div>
             <div class="skill">
                 <div class="skill-chart">
                     <canvas id="cssChart"></canvas>
                 </div>
-                <div class="skill-name">CSS 80%</div>
+                <div class="skill-name">CSS</div>
             </div>
             <div class="skill">
                 <div class="skill-chart">
                     <canvas id="reactChart"></canvas>
                 </div>
-                <div class="skill-name">React 70%</div>
+                <div class="skill-name">React</div>
             </div>
         </div>
     </section>
@@ -149,6 +150,9 @@
                     plugins: {
                         tooltip: { enabled: false },
                         legend: { display: false },
+                    },
+                    plugins: [{
+                        id: 'text',
                         beforeDraw: function(chart) {
                             var width = chart.width,
                                 height = chart.height,
@@ -163,7 +167,7 @@
                             ctx.fillText(text, textX, textY);
                             ctx.save();
                         }
-                    }
+                    }]
                 }
             });
         }
