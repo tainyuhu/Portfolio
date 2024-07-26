@@ -20,37 +20,36 @@
                 <div class="skill-chart">
                     <canvas id="jsChart"></canvas>
                 </div>
-                <div class="skill-name">JavaScript</div>
+                <div class="skill-name">JavaScript 85%</div>
             </div>
             <div class="skill">
                 <div class="skill-chart">
                     <canvas id="pythonChart"></canvas>
                 </div>
-                <div class="skill-name">Python</div>
+                <div class="skill-name">Python 90%</div>
             </div>
             <div class="skill">
                 <div class="skill-chart">
                     <canvas id="javaChart"></canvas>
                 </div>
-                <div class="skill-name">Java</div>
-            </div>
+                <div class="skill-name">Java 75%</            </div>
             <div class="skill">
                 <div class="skill-chart">
                     <canvas id="htmlChart"></canvas>
                 </div>
-                <div class="skill-name">HTML</div>
+                <div class="skill-name">HTML 90%</div>
             </div>
             <div class="skill">
                 <div class="skill-chart">
                     <canvas id="cssChart"></canvas>
                 </div>
-                <div class="skill-name">CSS</div>
+                <div class="skill-name">CSS 80%</div>
             </div>
             <div class="skill">
                 <div class="skill-chart">
                     <canvas id="reactChart"></canvas>
                 </div>
-                <div class="skill-name">React</div>
+                <div class="skill-name">React 70%</div>
             </div>
         </div>
     </section>
@@ -113,14 +112,14 @@
     <section>
         <div class="section-title">項目經驗</div>
         <div class="projects-container">
-            <div class="project" style="background-color: #2c3e50;">
+            <div class="project" style="background-color: #1e3a5f;">
                 <h2>智能家居系統</h2>
                 <p>描述：開發一個智能家居管理系統，使用React和Node.js進行前後端開發。</p>
                 <p>角色：全端工程師</p>
                 <a class="button" href="https://github.com/username/smart-home" target="_blank">瀏覽項目</a>
                 <a class="button" href="https://github.com/username/smart-home/docs" target="_blank">瀏覽文件</a>
             </div>
-            <div class="project" style="background-color: #34495e;">
+            <div class="project" style="background-color: #254e70;">
                 <h2>電子商務平台</h2>
                 <p>描述：參與電子商務平台的開發，負責後端API設計和資料庫管理。</p>
                 <p>角色：後端工程師</p>
@@ -149,43 +148,32 @@
                     cutout: '80%',
                     plugins: {
                         tooltip: { enabled: false },
-                        legend: { display: false }
+                        legend: { display: false },
+                        beforeDraw: function(chart) {
+                            var width = chart.width,
+                                height = chart.height,
+                                ctx = chart.ctx;
+                            ctx.restore();
+                            var fontSize = (height / 114).toFixed(2);
+                            ctx.font = fontSize + "em sans-serif";
+                            ctx.textBaseline = "middle";
+                            var text = value + "%",
+                                textX = Math.round((width - ctx.measureText(text).width) / 2),
+                                textY = height / 2;
+                            ctx.fillText(text, textX, textY);
+                            ctx.save();
+                        }
                     }
                 }
             });
         }
 
-        function addChartLabel(chart, value) {
-            Chart.pluginService.register({
-                beforeDraw: function (chart) {
-                    var width = chart.chart.width,
-                        height = chart.chart.height,
-                        ctx = chart.chart.ctx;
-                    ctx.restore();
-                    var fontSize = (height / 114).toFixed(2);
-                    ctx.font = fontSize + "em sans-serif";
-                    ctx.textBaseline = "middle";
-                    var text = value + "%",
-                        textX = Math.round((width - ctx.measureText(text).width) / 2),
-                        textY = height / 2;
-                    ctx.fillText(text, textX, textY);
-                    ctx.save();
-                }
-            });
-        }
-
-        createSkillChart(document.getElementById('jsChart').getContext('2d'), 80);
-        addChartLabel(createSkillChart(document.getElementById('jsChart').getContext('2d'), 80), 80);
-        createSkillChart(document.getElementById('pythonChart').getContext('2d'), 85);
-        addChartLabel(createSkillChart(document.getElementById('pythonChart').getContext('2d'), 85), 85);
+        createSkillChart(document.getElementById('jsChart').getContext('2d'), 85);
+        createSkillChart(document.getElementById('pythonChart').getContext('2d'), 90);
         createSkillChart(document.getElementById('javaChart').getContext('2d'), 75);
-        addChartLabel(createSkillChart(document.getElementById('javaChart').getContext('2d'), 75), 75);
         createSkillChart(document.getElementById('htmlChart').getContext('2d'), 90);
-        addChartLabel(createSkillChart(document.getElementById('htmlChart').getContext('2d'), 90), 90);
         createSkillChart(document.getElementById('cssChart').getContext('2d'), 80);
-        addChartLabel(createSkillChart(document.getElementById('cssChart').getContext('2d'), 80), 80);
         createSkillChart(document.getElementById('reactChart').getContext('2d'), 70);
-        addChartLabel(createSkillChart(document.getElementById('reactChart').getContext('2d'), 70), 70);
     </script>
 </body>
 </html>
