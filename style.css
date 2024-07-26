@@ -70,6 +70,7 @@ section {
 .skill-name {
     margin-top: 0.5em;
     color: #003366;
+    font-weight: bold;
 }
 
 .experience-container {
@@ -146,6 +147,7 @@ footer {
 
 .project h2 {
     font-weight: bold;
+    color: #ffffff;
 }
 
 canvas {
