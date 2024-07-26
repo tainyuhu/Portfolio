@@ -20,37 +20,37 @@
                 <div class="skill-chart">
                     <canvas id="jsChart"></canvas>
                 </div>
-                <div class="skill-name">JavaScript 85%</div>
+                <div class="skill-name">JavaScript</div>
             </div>
             <div class="skill">
                 <div class="skill-chart">
                     <canvas id="pythonChart"></canvas>
                 </div>
-                <div class="skill-name">Python 90%</div>
+                <div class="skill-name">Python</div>
             </div>
             <div class="skill">
                 <div class="skill-chart">
                     <canvas id="javaChart"></canvas>
                 </div>
-                <div class="skill-name">Java 75%</div>
+                <div class="skill-name">Java</div>
             </div>
             <div class="skill">
                 <div class="skill-chart">
                     <canvas id="htmlChart"></canvas>
                 </div>
-                <div class="skill-name">HTML 90%</div>
+                <div class="skill-name">HTML</div>
             </div>
             <div class="skill">
                 <div class="skill-chart">
                     <canvas id="cssChart"></canvas>
                 </div>
-                <div class="skill-name">CSS 80%</div>
+                <div class="skill-name">CSS</div>
             </div>
             <div class="skill">
                 <div class="skill-chart">
                     <canvas id="reactChart"></canvas>
                 </div>
-                <div class="skill-name">React 70%</div>
+                <div class="skill-name">React</div>
             </div>
         </div>
     </section>
@@ -127,6 +127,20 @@
                 <a class="button" href="https://github.com/username/e-commerce" target="_blank">瀏覽項目</a>
                 <a class="button" href="https://github.com/username/e-commerce/docs" target="_blank">瀏覽文件</a>
             </div>
+            <div class="project" style="background-color: #6a1b9a;">
+                <h2>社交媒體應用</h2>
+                <p>描述：開發和維護一個社交媒體平台，使用React Native進行移動應用開發。</p>
+                <p>角色：前端工程師</p>
+                <a class="button" href="https://github.com/username/social-media" target="_blank">瀏覽項目</a>
+                <a class="button" href="https://github.com/username/social-media/docs" target="_blank">瀏覽文件</a>
+            </div>
+            <div class="project" style="background-color: #2e7d32;">
+                <h2>數據分析工具</h2>
+                <p>描述：設計和實現一個數據分析工具，使用Python和Pandas進行數據處理。</p>
+                <p>角色：數據工程師</p>
+                <a class="button" href="https://github.com/username/data-analysis" target="_blank">瀏覽項目</a>
+                <a class="button" href="https://github.com/username/data-analysis/docs" target="_blank">瀏覽文件</a>
+            </div>
         </div>
     </section>
     <footer>
@@ -160,7 +174,7 @@
                             ctx = chart.ctx;
                         ctx.restore();
                         var fontSize = (height / 114).toFixed(2);
-                        ctx.font = fontSize + "em sans-serif";
+                        ctx.font = 'bold ' + fontSize + "em sans-serif";
                         ctx.textBaseline = "middle";
                         var text = value + "%",
                             textX = Math.round((width - ctx.measureText(text).width) / 2),
