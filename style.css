@@ -145,6 +145,14 @@ footer {
     width: 45%;
 }
 
+.project:nth-child(odd) {
+    background-color: #1e3a5f;
+}
+
+.project:nth-child(even) {
+    background-color: #254e70;
+}
+
 .project h2 {
     font-weight: bold;
     color: #ffffff;
